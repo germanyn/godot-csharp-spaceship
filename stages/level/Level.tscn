@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://bs00mfgi6ui41"]
 
 [ext_resource type="PackedScene" uid="uid://daountggg52dx" path="res://entities/player/Player.tscn" id="1_c1iqt"]
+[ext_resource type="PackedScene" uid="uid://bv8pmmfqryocr" path="res://entities/space/Background.tscn" id="2_e8aqj"]
+[ext_resource type="PackedScene" uid="uid://bsw70h83711rn" path="res://entities/object_container/ObjectContainer.tscn" id="3_p3728"]
+[ext_resource type="PackedScene" uid="uid://lsulpaf6qsuc" path="res://tests/TestPoolable.tscn" id="4_83bep"]
 
 [node name="Level" type="Node" unique_id=898899893]
 
 [node name="Player" parent="." unique_id=1554148494 instance=ExtResource("1_c1iqt")]
 position = Vector2(759, 862)
+
+[node name="Background" parent="." unique_id=1420490211 instance=ExtResource("2_e8aqj")]
+
+[node name="ObjectContainer" parent="." unique_id=774098342 instance=ExtResource("3_p3728")]
+TestScene = ExtResource("4_83bep")

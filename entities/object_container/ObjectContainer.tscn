@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bsw70h83711rn"]
+
+[ext_resource type="Script" uid="uid://bvw8mgrveyfb8" path="res://entities/object_container/ObjectContainer.cs" id="1_ipnax"]
+
+[node name="ObjectContainer" type="Node" unique_id=774098342]
+script = ExtResource("1_ipnax")

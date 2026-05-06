@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://daountggg52dx"]
 
+[ext_resource type="PackedScene" uid="uid://ba0ih4do2unyj" path="res://entities/player/PlayerThrust.tscn" id="1_l3c03"]
 [ext_resource type="Texture2D" uid="uid://y6tk7g15n0kw" path="res://assets/Images/player.png" id="1_mab2k"]
 [ext_resource type="PackedScene" uid="uid://bfsagyxpsxw7q" path="res://entities/components/PlayerMovement.tscn" id="2_453mm"]
 
 [node name="Player" type="Node2D" unique_id=1554148494]
+
+[node name="PlayerThrust" parent="." unique_id=1295759809 instance=ExtResource("1_l3c03")]
+position = Vector2(44, 14)
+
+[node name="PlayerThrust2" parent="." unique_id=1318024197 instance=ExtResource("1_l3c03")]
+position = Vector2(-44, 14)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=816256282]
 texture = ExtResource("1_mab2k")
@@ -11,3 +18,4 @@ texture = ExtResource("1_mab2k")
 [node name="ManualShooter" type="Node2D" parent="." unique_id=1347357269]
 
 [node name="PlayerMovement" parent="." unique_id=231081492 instance=ExtResource("2_453mm")]
+speed = 500.0
