@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bvsc3nvs1yend"]
+
+[ext_resource type="Script" uid="uid://byc1dg2kfpyma" path="res://entities/effects/Explosion.cs" id="1_w4egp"]
+
+[node name="Explosion" type="Node2D" unique_id=384664525]
+script = ExtResource("1_w4egp")
+
+[node name="Emitter" type="CPUParticles2D" parent="." unique_id=1567817742]
+emitting = false
+one_shot = true
+
+[node name="Sound" type="AudioStreamPlayer" parent="." unique_id=1683478709]

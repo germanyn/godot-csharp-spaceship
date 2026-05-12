@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bd5talplk5i4h"]
+
+[ext_resource type="PackedScene" uid="uid://bvsc3nvs1yend" path="res://entities/effects/Explosion.tscn" id="1_tsg77"]
+[ext_resource type="Texture2D" uid="uid://bkdyygvheb3kc" path="res://assets/Textures/ParticleDot16.png" id="2_co5jv"]
+[ext_resource type="AudioStream" uid="uid://bqnjnxhln6esb" path="res://assets/Sounds/583451__hit.wav" id="2_hw1mr"]
+
+[sub_resource type="Curve" id="Curve_mwvdy"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.32388663, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_rxpyu"]
+offsets = PackedFloat32Array(0.24454148, 0.4250364, 0.8733624, 1)
+colors = PackedColorArray(0.3372549, 0.81960785, 0.8352941, 1, 0.06666667, 0.34117648, 0.7490196, 1, 1.2832527, 2.9135547, 2.9697719, 1, 1.2832527, 2.9135547, 2.9697719, 0)
+
+[node name="PlayerLaserExplosion" unique_id=384664525 instance=ExtResource("1_tsg77")]
+
+[node name="Emitter" parent="." index="0" unique_id=1567817742]
+amount = 64
+texture = ExtResource("2_co5jv")
+lifetime = 0.6
+explosiveness = 0.52
+randomness = 0.25
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 60.0
+radial_accel_min = 400.0
+radial_accel_max = 600.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_mwvdy")
+color_ramp = SubResource("Gradient_rxpyu")
+
+[node name="Sound" parent="." index="1" unique_id=1683478709]
+stream = ExtResource("2_hw1mr")

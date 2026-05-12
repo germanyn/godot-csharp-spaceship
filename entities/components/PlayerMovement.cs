@@ -11,7 +11,7 @@ public partial class PlayerMovement : Node
 	[Export]
 	float margin = 64;
 
-	Node2D player;
+	Node2D parent;
 	Rect2 movementRect;
 
 	public override void _Ready()
@@ -24,16 +24,16 @@ public partial class PlayerMovement : Node
 			return;
 		}
 
-		player = node2dParent;
-		movementRect = player.GetViewportRect().Grow(-margin);
+		this.parent = node2dParent;
+        movementRect = this.parent.GetViewportRect().Grow(-margin);
 	}
 
     public override void _PhysicsProcess(double delta)
     {
 		var input = Input.GetVector("left", "right", "up", "down").Normalized();
-		var newPosition = player.Position + input * speed * (float)delta;
+		var newPosition = parent.Position + input * speed * (float)delta;
 
-		player.Position = newPosition.Clamp(
+		parent.Position = newPosition.Clamp(
 			movementRect.Position,
 			movementRect.End
 		);

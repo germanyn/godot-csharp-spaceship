@@ -1,6 +1,6 @@
 using Godot;
 
-namespace commons;
+namespace SpaceAce.commons;
 
 public partial class Poolable : Node2D
 {

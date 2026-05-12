@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://23xsjoj7oey5"]
+
+[ext_resource type="PackedScene" uid="uid://bvsc3nvs1yend" path="res://entities/effects/Explosion.tscn" id="1_xlcbt"]
+[ext_resource type="AudioStream" uid="uid://lfaotbbwdxeh" path="res://assets/Sounds/93834__cgeffex__huge-explosion.wav" id="2_8fd7p"]
+[ext_resource type="Texture2D" uid="uid://d1ioqdx2yl7o4" path="res://assets/Textures/scorch_02.png" id="2_u7ti6"]
+[ext_resource type="AudioStream" uid="uid://dhavfqmyg4gtl" path="res://assets/Sounds/AsteroidExplosion.wav" id="3_u7ti6"]
+
+[sub_resource type="Curve" id="Curve_t6f2h"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.07017544, 0.5022722), 0.0, 0.0, 0, 0, Vector2(0.17948717, 0.5554419), 0.3752262, 0.3752262, 0, 0, Vector2(0.29959512, 1), 0.0, 0.0, 0, 0, Vector2(0.69095814, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="Gradient" id="Gradient_wk0h4"]
+offsets = PackedFloat32Array(0, 0.30422124, 0.83260554, 1)
+colors = PackedColorArray(1, 1, 1, 1, 2.4973502, 1.5011723, 0.6473055, 1, 2.497, 1.501, 0.647, 1, 0.94509804, 0.5686275, 0.20784314, 0.12941177)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_t6f2h"]
+streams_count = 2
+stream_0/stream = ExtResource("2_8fd7p")
+stream_1/stream = ExtResource("3_u7ti6")
+
+[node name="EnemyShipExplosion" unique_id=384664525 instance=ExtResource("1_xlcbt")]
+
+[node name="Emitter" parent="." index="0" unique_id=1567817742]
+amount = 48
+texture = ExtResource("2_u7ti6")
+lifetime = 1.2
+explosiveness = 0.64
+randomness = 0.23
+emission_shape = 2
+emission_sphere_radius = 26.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+radial_accel_min = 20.0
+radial_accel_max = 30.0
+angle_min = 0.3
+angle_max = 0.7
+scale_amount_min = 0.3
+scale_amount_max = 0.7
+scale_amount_curve = SubResource("Curve_t6f2h")
+color_ramp = SubResource("Gradient_wk0h4")
+
+[node name="Sound" parent="." index="1" unique_id=1683478709]
+stream = SubResource("AudioStreamRandomizer_t6f2h")

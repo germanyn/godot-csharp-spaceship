@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using Godot;
 
-namespace commons;
+namespace SpaceAce.commons;
 
 public partial class ScenePool : RefCounted
 {
