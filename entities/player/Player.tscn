@@ -15,6 +15,7 @@ position = Vector2(44, 14)
 position = Vector2(-44, 14)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=816256282]
+z_index = 1
 texture = ExtResource("1_mab2k")
 
 [node name="ManualShooter" type="Node2D" parent="." unique_id=1347357269]
