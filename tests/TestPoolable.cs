@@ -23,6 +23,7 @@ public partial class TestPoolable : Poolable
     Label.Text = count.ToString();
     ++count;
     Timer.Timeout += OnTimerTimeout;
+		base._Ready();
   }
 
   public override void Activate()

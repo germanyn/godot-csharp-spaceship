@@ -19,6 +19,7 @@ public partial class Explosion : Poolable
     public override void _Ready()
     {
 		Sound.Finished += Deactivate;
+		base._Ready();
     }
 
     public override void Activate()

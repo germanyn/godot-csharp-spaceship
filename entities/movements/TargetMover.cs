@@ -8,15 +8,23 @@ public partial class TargetMover : Mover
 {
 	[Export] StringName TargetGroup = nameof(Player);
 
-    internal override void SetupVelocity()
+	protected Node2D target;
+
+    public override void _Ready()
     {
-		var target = GetTree().GetFirstNodeInGroup(TargetGroup);
+		var node = GetTree().GetFirstNodeInGroup(TargetGroup);
 		Debug.Assert(target is null, "Target not found");
-		if (target is not Node2D target2d) {
+		if (node is not Node2D node2d) {
 			GD.Print("Target is not a Node2D");
 			return;
 		}
-		direction = parent.GlobalPosition.DirectionTo(target2d.GlobalPosition);
+		target = node2d;
+        base._Ready();
+    }
+
+    internal override void SetupVelocity()
+    {
+		direction = parent.GlobalPosition.DirectionTo(target.GlobalPosition);
 		base.SetupVelocity();
     }
 }

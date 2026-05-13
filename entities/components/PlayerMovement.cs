@@ -26,6 +26,7 @@ public partial class PlayerMovement : Node
 
 		this.parent = node2dParent;
         movementRect = this.parent.GetViewportRect().Grow(-margin);
+		base._Ready();
 	}
 
     public override void _PhysicsProcess(double delta)

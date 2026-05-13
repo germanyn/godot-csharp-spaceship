@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://df41ukmwkaqvo"]
+
+[ext_resource type="Script" uid="uid://37fboo4aq83f" path="res://entities/movements/HomingMover.cs" id="1_gc8po"]
+
+[node name="HomingMover" type="Node" unique_id=1253001748]
+script = ExtResource("1_gc8po")

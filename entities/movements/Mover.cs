@@ -24,6 +24,7 @@ public partial class Mover : Node
 
 		this.parent = node2dParent;
 		SetupVelocity();
+		base._Ready();
 	}
 	
 	virtual internal void SetupVelocity()
