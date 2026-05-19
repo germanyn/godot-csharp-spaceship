@@ -8,11 +8,12 @@
 
 [node name="Sprite2D" parent="." index="0" unique_id=1938860738]
 rotation = 1.5707964
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_u7yfu")
 
 [node name="ScreenNotifier2D" parent="." index="1" unique_id=791882625]
-rect = Rect2(-70, -55, 140, 110)
+rect = Rect2(-57, -46, 114, 92)
 
 [node name="HomingMover" parent="." index="3" unique_id=1253001748 instance=ExtResource("2_1jr21")]
 speed = 150.0
-rotationSpeedDegrees = 20.0
+rotationSpeedDegrees = 90.0

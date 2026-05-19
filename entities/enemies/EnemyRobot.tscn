@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bmopdpb578kbf"]
+
+[ext_resource type="PackedScene" uid="uid://xp8o6f070ifu" path="res://entities/enemies/EnemyBase.tscn" id="1_rr26m"]
+[ext_resource type="Texture2D" uid="uid://u6jmjoem641h" path="res://assets/Images/Enemy3.png" id="2_v3s2i"]
+
+[node name="EnemyRobot" unique_id=644578458 instance=ExtResource("1_rr26m")]
+speed = 100.0
+
+[node name="Sprite2D" parent="." index="0" unique_id=1546929645]
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_v3s2i")

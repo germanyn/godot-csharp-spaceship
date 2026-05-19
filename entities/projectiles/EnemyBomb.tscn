@@ -7,10 +7,11 @@
 [node name="EnemyBomb" unique_id=476217863 instance=ExtResource("1_vw2va")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=1938860738]
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_6i2fu")
 
 [node name="ScreenNotifier2D" parent="." index="1" unique_id=791882625]
-rect = Rect2(-41, -66, 82, 132)
+rect = Rect2(-39, -62, 78, 124)
 
 [node name="TargetMover" parent="." index="3" unique_id=1712657842 instance=ExtResource("2_33n6l")]
-speed = 150.0
+speed = 100.0

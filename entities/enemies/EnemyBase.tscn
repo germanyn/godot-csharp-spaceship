@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://xp8o6f070ifu"]
+
+[ext_resource type="Script" uid="uid://8eusrkwcwe8v" path="res://entities/enemies/EnemyBase.cs" id="1_v2vft"]
+
+[node name="EnemyBase" type="PathFollow2D" unique_id=644578458]
+rotates = false
+loop = false
+script = ExtResource("1_v2vft")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1546929645]

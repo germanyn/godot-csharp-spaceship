@@ -7,10 +7,11 @@
 [node name="EnemyLaser" unique_id=476217863 instance=ExtResource("1_ghbyk")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=1938860738]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_lu1vo")
 
 [node name="ScreenNotifier2D" parent="." index="1" unique_id=791882625]
-rect = Rect2(-10, -66, 20, 132)
+rect = Rect2(-6, -33, 12, 66)
 
 [node name="Mover" parent="." index="3" unique_id=1651453100 instance=ExtResource("2_rgb3y")]
 speed = 150.0

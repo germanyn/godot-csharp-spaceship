@@ -3,7 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://daountggg52dx" path="res://entities/player/Player.tscn" id="1_c1iqt"]
 [ext_resource type="PackedScene" uid="uid://bv8pmmfqryocr" path="res://entities/space/Background.tscn" id="2_e8aqj"]
 [ext_resource type="PackedScene" uid="uid://bsw70h83711rn" path="res://entities/object_container/ObjectContainer.tscn" id="3_p3728"]
+[ext_resource type="PackedScene" uid="uid://5tukpoecgk3w" path="res://entities/enemies/EnemyVee.tscn" id="5_4wcip"]
+[ext_resource type="PackedScene" uid="uid://bmopdpb578kbf" path="res://entities/enemies/EnemyRobot.tscn" id="6_tuhl2"]
 [ext_resource type="PackedScene" uid="uid://dhlbwwp2n6aes" path="res://entities/projectiles/HomingMissile.tscn" id="6_w5ioj"]
+
+[sub_resource type="Curve2D" id="Curve2D_83bep"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 171, 448, 0, 0, 0, 0, 1245, 447)
+}
+point_count = 2
 
 [node name="Level" type="Node" unique_id=898899893]
 
@@ -14,3 +22,13 @@ position = Vector2(759, 862)
 
 [node name="ObjectContainer" parent="." unique_id=774098342 instance=ExtResource("3_p3728")]
 TestScene = ExtResource("6_w5ioj")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1729801804]
+curve = SubResource("Curve2D_83bep")
+
+[node name="EnemyVee" parent="Path2D" unique_id=644578458 instance=ExtResource("5_4wcip")]
+position = Vector2(270.99457, 447.9069)
+progress = 100.0
+
+[node name="EnemyRobot" parent="Path2D" unique_id=1093242447 instance=ExtResource("6_tuhl2")]
+position = Vector2(171, 448)
