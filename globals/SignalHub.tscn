@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bmqhtfsrv6pb2"]
+
+[ext_resource type="Script" uid="uid://b3kgcum2hwx04" path="res://globals/SignalHub.cs" id="1_ct35e"]
+
+[node name="SignalHub" type="Node" unique_id=1457075492]
+script = ExtResource("1_ct35e")

@@ -10,6 +10,12 @@ public partial class ObjectContainer : Node
 
 	Dictionary<PackedScene, ScenePool> Pools = [];
 
+    public override void _Ready()
+    {
+		SignalHub.Instance.SpawnPoolObject += OnSpawnPoolObject;
+        base._Ready();
+    }
+
     public override void _UnhandledInput(InputEvent @event)
     {
 		if (@event.IsActionPressed("test"))

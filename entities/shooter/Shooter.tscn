@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cs8ov2obt2qwa"]
+
+[ext_resource type="Script" uid="uid://ci6exxagyx1o3" path="res://entities/shooter/Shooter.cs" id="1_cs8aj"]
+
+[node name="Shooter" type="Node2D" unique_id=1056734557]
+script = ExtResource("1_cs8aj")
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=2026042490]
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=912230809]

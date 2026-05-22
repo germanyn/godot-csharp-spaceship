@@ -12,8 +12,12 @@ config_version=5
 
 config/name="SpaceAce"
 run/main_scene="uid://bs00mfgi6ui41"
-config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SignalHub="*uid://bmqhtfsrv6pb2"
 
 [display]
 
