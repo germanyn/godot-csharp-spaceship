@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://df41ukmwkaqvo" path="res://entities/movements/HomingMover.tscn" id="2_1jr21"]
 [ext_resource type="Texture2D" uid="uid://be7s4athj7eho" path="res://assets/Images/HomingMissile.png" id="2_u7yfu"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jr21"]
+radius = 32.0
+height = 120.0
+
 [node name="HomingMissile" unique_id=476217863 instance=ExtResource("1_2fnud")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=1938860738]
@@ -17,3 +21,7 @@ rect = Rect2(-57, -46, 114, 92)
 [node name="HomingMover" parent="." index="3" unique_id=1253001748 instance=ExtResource("2_1jr21")]
 speed = 150.0
 rotationSpeedDegrees = 90.0
+
+[node name="HitBox" parent="." index="4" unique_id=88657805]
+rotation = 1.5707964
+collisionShape = SubResource("CapsuleShape2D_1jr21")

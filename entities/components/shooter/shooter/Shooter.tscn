@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cs8ov2obt2qwa"]
 
-[ext_resource type="Script" uid="uid://ci6exxagyx1o3" path="res://entities/shooter/Shooter.cs" id="1_cs8aj"]
+[ext_resource type="Script" uid="uid://ci6exxagyx1o3" path="res://entities/components/shooter/shooter/Shooter.cs" id="1_cs8aj"]
 
 [node name="Shooter" type="Node2D" unique_id=1056734557]
 script = ExtResource("1_cs8aj")

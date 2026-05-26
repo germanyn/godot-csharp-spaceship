@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://camo3fep6mflg" path="res://entities/projectiles/EnemyBomb.tscn" id="3_ag6ue"]
 [ext_resource type="AudioStream" uid="uid://bwrh48v2l3152" path="res://assets/Sounds/685916_whoosh.wav" id="4_u1htt"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ag6ue"]
+radius = 60.0
+
 [node name="EnemyRobot" unique_id=644578458 instance=ExtResource("1_rr26m")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=1546929645]
@@ -15,3 +18,6 @@ texture = ExtResource("2_v3s2i")
 ShootWait = 2.0
 projectileScene = ExtResource("3_ag6ue")
 audioStream = ExtResource("4_u1htt")
+
+[node name="HitBox" parent="." index="2" unique_id=88657805]
+collisionShape = SubResource("CircleShape2D_ag6ue")

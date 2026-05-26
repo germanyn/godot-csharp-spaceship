@@ -5,6 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://ebfedm722tq0" path="res://assets/Sounds/Blaster1_short.wav" id="3_2mcht"]
 [ext_resource type="PackedScene" uid="uid://sfdcvasfm1cc" path="res://entities/projectiles/EnemyLaser.tscn" id="3_julth"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_julth"]
+radius = 50.0
+
 [node name="EnemyVee" unique_id=644578458 instance=ExtResource("1_xbb7g")]
 speed = 200.0
 
@@ -17,3 +20,6 @@ texture = ExtResource("2_g4oo0")
 ShootWait = 2.0
 projectileScene = ExtResource("3_julth")
 audioStream = ExtResource("3_2mcht")
+
+[node name="HitBox" parent="." index="2" unique_id=88657805]
+collisionShape = SubResource("CircleShape2D_julth")

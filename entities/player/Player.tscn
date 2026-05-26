@@ -3,7 +3,13 @@
 [ext_resource type="Script" uid="uid://bex2de4vudgik" path="res://entities/player/Player.cs" id="1_eaotn"]
 [ext_resource type="PackedScene" uid="uid://ba0ih4do2unyj" path="res://entities/player/PlayerThrust.tscn" id="1_l3c03"]
 [ext_resource type="Texture2D" uid="uid://y6tk7g15n0kw" path="res://assets/Images/player.png" id="1_mab2k"]
-[ext_resource type="PackedScene" uid="uid://bfsagyxpsxw7q" path="res://entities/components/PlayerMovement.tscn" id="2_453mm"]
+[ext_resource type="PackedScene" uid="uid://bfsagyxpsxw7q" path="res://entities/movements/PlayerMovement.tscn" id="2_453mm"]
+[ext_resource type="PackedScene" uid="uid://bpnj1e64vb14o" path="res://entities/components/shooter/ManualShooter.tscn" id="5_g3lhm"]
+[ext_resource type="PackedScene" uid="uid://cyxmbb7mxiax3" path="res://entities/projectiles/PlayerLaser.tscn" id="6_4pwj0"]
+[ext_resource type="PackedScene" uid="uid://bko10s8vuwhti" path="res://entities/components/hitbox/HitBox.tscn" id="7_fmb3c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmb3c"]
+radius = 50.0
 
 [node name="Player" type="Node2D" unique_id=1554148494]
 script = ExtResource("1_eaotn")
@@ -17,7 +23,12 @@ position = Vector2(-44, 14)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=816256282]
 texture = ExtResource("1_mab2k")
 
-[node name="ManualShooter" type="Node2D" parent="." unique_id=1347357269]
-
 [node name="PlayerMovement" parent="." unique_id=231081492 instance=ExtResource("2_453mm")]
 speed = 500.0
+
+[node name="ManualShooter" parent="." unique_id=778654115 instance=ExtResource("5_g3lhm")]
+position = Vector2(0, -81)
+projectileScene = ExtResource("6_4pwj0")
+
+[node name="HitBox" parent="." unique_id=88657805 instance=ExtResource("7_fmb3c")]
+collisionShape = SubResource("CircleShape2D_fmb3c")

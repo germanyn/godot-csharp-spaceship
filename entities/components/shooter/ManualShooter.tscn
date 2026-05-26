@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bpnj1e64vb14o"]
+
+[ext_resource type="Script" uid="uid://d2b2lc4msi42h" path="res://entities/components/shooter/ManualShooter.cs" id="1_dbe2o"]
+
+[node name="ManualShooter" type="Node2D" unique_id=778654115]
+script = ExtResource("1_dbe2o")
