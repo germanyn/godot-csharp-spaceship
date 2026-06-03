@@ -21,3 +21,9 @@ audioStream = ExtResource("4_u1htt")
 
 [node name="HitBox" parent="." index="2" unique_id=88657805]
 collisionShape = SubResource("CircleShape2D_ag6ue")
+
+[node name="HealthBar" parent="." index="3" unique_id=1897770670]
+offset_left = -50.0
+offset_top = -60.0
+offset_right = 50.0
+offset_bottom = -54.0

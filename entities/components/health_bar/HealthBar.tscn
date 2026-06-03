@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d1ctrkge078uo"]
+
+[ext_resource type="Texture2D" uid="uid://bvllg7c55nteg" path="res://assets/Images/progress_ph.png" id="1_sbhdi"]
+[ext_resource type="Script" uid="uid://bi713icwa0n45" path="res://entities/components/health_bar/HealthBar.cs" id="2_p6wt4"]
+
+[node name="HealthBar" type="TextureProgressBar" unique_id=1897770670]
+offset_right = 200.0
+offset_bottom = 60.0
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_sbhdi")
+texture_progress = ExtResource("1_sbhdi")
+tint_under = Color(0.05490196, 0.047058824, 0.39607844, 1)
+script = ExtResource("2_p6wt4")

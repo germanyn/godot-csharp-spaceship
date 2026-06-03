@@ -19,8 +19,12 @@ public partial class HitBox : Area2D
 	}
 	[Node] CollisionShape2D collisionShape2D;
 	[Export] int maxCollisions = 1;
+	[Export] int damageDealt = 15;
+
 	int collisionsLeft = 0;
+
 	public event Action<Area2D> Died;
+	public event Action<int> Hit;
 
 	public override void _Notification(int what)
 	{
@@ -52,6 +56,8 @@ public partial class HitBox : Area2D
 
     private void OnAreaEntered(Area2D area)
     {
+		if (area is HitBox hitBox) Hit?.Invoke(hitBox.damageDealt);
+
         collisionsLeft -= 1;
 		if (collisionsLeft <= 0)
 		{
