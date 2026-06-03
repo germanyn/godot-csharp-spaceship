@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://sfdcvasfm1cc"]
 
 [ext_resource type="PackedScene" uid="uid://bdwtcy5mq606e" path="res://entities/projectiles/BaseProjectile.tscn" id="1_ghbyk"]
+[ext_resource type="PackedScene" uid="uid://bhibwi6ek3uo0" path="res://entities/effects/EnemyLaserExplosion.tscn" id="2_esdla"]
 [ext_resource type="Texture2D" uid="uid://btl5dj1x15ktq" path="res://assets/Images/LaserOrange.png" id="2_lu1vo"]
 [ext_resource type="PackedScene" uid="uid://cxafu2po3kjyv" path="res://entities/movements/Mover.tscn" id="2_rgb3y"]
 
@@ -9,6 +10,8 @@ radius = 8.0
 height = 70.0
 
 [node name="EnemyLaser" unique_id=476217863 instance=ExtResource("1_ghbyk")]
+ExplosionScene = ExtResource("2_esdla")
+ExplosionMargin = 20.0
 
 [node name="Sprite2D" parent="." index="0" unique_id=1938860738]
 scale = Vector2(0.5, 0.5)
@@ -22,4 +25,5 @@ speed = 150.0
 direction = Vector2(0, 1)
 
 [node name="HitBox" parent="." index="4" unique_id=88657805]
+collision_layer = 4
 collisionShape = SubResource("CapsuleShape2D_rgb3y")

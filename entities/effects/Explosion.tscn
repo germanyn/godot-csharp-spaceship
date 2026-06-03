@@ -6,6 +6,7 @@
 script = ExtResource("1_w4egp")
 
 [node name="Emitter" type="CPUParticles2D" parent="." unique_id=1567817742]
+z_index = 20
 emitting = false
 one_shot = true
 

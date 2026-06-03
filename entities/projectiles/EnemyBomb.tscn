@@ -3,11 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://bdwtcy5mq606e" path="res://entities/projectiles/BaseProjectile.tscn" id="1_vw2va"]
 [ext_resource type="Texture2D" uid="uid://ccm4gp4ggbf2k" path="res://assets/Images/Bomb.png" id="2_6i2fu"]
 [ext_resource type="PackedScene" uid="uid://bcjk1aypau2vl" path="res://entities/movements/TargetMover.tscn" id="2_33n6l"]
+[ext_resource type="PackedScene" uid="uid://bhibwi6ek3uo0" path="res://entities/effects/EnemyLaserExplosion.tscn" id="2_fk8pt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6i2fu"]
 radius = 40.0
 
 [node name="EnemyBomb" unique_id=476217863 instance=ExtResource("1_vw2va")]
+ExplosionScene = ExtResource("2_fk8pt")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1938860738]
 scale = Vector2(0.9, 0.9)
@@ -21,4 +23,6 @@ speed = 100.0
 
 [node name="HitBox" parent="." index="4" unique_id=88657805]
 position = Vector2(0, 24)
+collision_layer = 20
+collision_mask = 9
 collisionShape = SubResource("CircleShape2D_6i2fu")

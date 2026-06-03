@@ -31,4 +31,5 @@ position = Vector2(0, -81)
 projectileScene = ExtResource("6_4pwj0")
 
 [node name="HitBox" parent="." unique_id=88657805 instance=ExtResource("7_fmb3c")]
+collision_mask = 6
 collisionShape = SubResource("CircleShape2D_fmb3c")

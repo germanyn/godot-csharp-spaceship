@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bdwtcy5mq606e" path="res://entities/projectiles/BaseProjectile.tscn" id="1_2fnud"]
 [ext_resource type="PackedScene" uid="uid://df41ukmwkaqvo" path="res://entities/movements/HomingMover.tscn" id="2_1jr21"]
+[ext_resource type="PackedScene" uid="uid://bhibwi6ek3uo0" path="res://entities/effects/EnemyLaserExplosion.tscn" id="2_qj0sr"]
 [ext_resource type="Texture2D" uid="uid://be7s4athj7eho" path="res://assets/Images/HomingMissile.png" id="2_u7yfu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jr21"]
@@ -9,6 +10,7 @@ radius = 32.0
 height = 120.0
 
 [node name="HomingMissile" unique_id=476217863 instance=ExtResource("1_2fnud")]
+ExplosionScene = ExtResource("2_qj0sr")
 
 [node name="Sprite2D" parent="." index="0" unique_id=1938860738]
 rotation = 1.5707964
@@ -24,4 +26,6 @@ rotationSpeedDegrees = 90.0
 
 [node name="HitBox" parent="." index="4" unique_id=88657805]
 rotation = 1.5707964
+collision_layer = 20
+collision_mask = 9
 collisionShape = SubResource("CapsuleShape2D_1jr21")

@@ -1,3 +1,4 @@
+using System;
 using Godot;
 using GodotUtilities;
 
@@ -17,21 +18,44 @@ public partial class HitBox : Area2D
 		}
 	}
 	[Node] CollisionShape2D collisionShape2D;
+	[Export] int maxCollisions = 1;
+	int collisionsLeft = 0;
+	public event Action<Area2D> Died;
 
 	public override void _Notification(int what)
 	{
 		if (what == NotificationSceneInstantiated) WireNodes();
 	}
 
-	public override void _Ready()
+    public override void _EnterTree()
+    {
+		AreaEntered += OnAreaEntered;
+        base._EnterTree();
+    }
+
+    public override void _Ready()
 	{
-		WireNodes();
 		base._Ready();
 		ApplyShape();
+		Reset();
 	}
 
 	void ApplyShape()
 	{
 		collisionShape2D.Shape = collisionShape;
 	}
+
+	public void Reset()
+	{
+		collisionsLeft = maxCollisions;
+	}
+
+    private void OnAreaEntered(Area2D area)
+    {
+        collisionsLeft -= 1;
+		if (collisionsLeft <= 0)
+		{
+			Died?.Invoke(area);
+		}
+    }
 }
