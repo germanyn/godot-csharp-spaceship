@@ -55,7 +55,7 @@ public partial class BaseProjectile : Poolable
 		var direction = GlobalPosition.DirectionTo(colliderPosition);
 		var explosionPosition = GlobalPosition + direction * ExplosionMargin;
 
-		SignalHub.Instance?.EmitSpawnPoolObject(
+		SignalHub.EmitSpawnPoolObject(
 			explosionPosition,
 			ExplosionScene
 		);

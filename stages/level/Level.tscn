@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bs00mfgi6ui41"]
 
 [ext_resource type="PackedScene" uid="uid://daountggg52dx" path="res://entities/player/Player.tscn" id="1_c1iqt"]
+[ext_resource type="Script" uid="uid://bbrxq0wlxpaau" path="res://stages/level/Level.cs" id="1_tnfkh"]
 [ext_resource type="PackedScene" uid="uid://bv8pmmfqryocr" path="res://entities/space/Background.tscn" id="2_e8aqj"]
 [ext_resource type="PackedScene" uid="uid://bsw70h83711rn" path="res://entities/object_container/ObjectContainer.tscn" id="3_p3728"]
 [ext_resource type="PackedScene" uid="uid://5tukpoecgk3w" path="res://entities/enemies/EnemyVee.tscn" id="5_4wcip"]
+[ext_resource type="PackedScene" uid="uid://bw2wfc5ilt4oo" path="res://entities/PowerUp/PowerUp.tscn" id="5_w5ioj"]
 [ext_resource type="PackedScene" uid="uid://bmopdpb578kbf" path="res://entities/enemies/EnemyRobot.tscn" id="6_tuhl2"]
-[ext_resource type="PackedScene" uid="uid://dhlbwwp2n6aes" path="res://entities/projectiles/HomingMissile.tscn" id="6_w5ioj"]
+[ext_resource type="PackedScene" uid="uid://chrr1nqlxur5b" path="res://entities/GameUi/GameUi.tscn" id="7_w5ioj"]
 
 [sub_resource type="Curve2D" id="Curve2D_83bep"]
 _data = {
@@ -14,6 +16,7 @@ _data = {
 point_count = 2
 
 [node name="Level" type="Node" unique_id=898899893]
+script = ExtResource("1_tnfkh")
 
 [node name="Player" parent="." unique_id=1554148494 instance=ExtResource("1_c1iqt")]
 position = Vector2(759, 862)
@@ -21,7 +24,7 @@ position = Vector2(759, 862)
 [node name="Background" parent="." unique_id=1420490211 instance=ExtResource("2_e8aqj")]
 
 [node name="ObjectContainer" parent="." unique_id=774098342 instance=ExtResource("3_p3728")]
-TestScene = ExtResource("6_w5ioj")
+TestScene = ExtResource("5_w5ioj")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1729801804]
 curve = SubResource("Curve2D_83bep")
@@ -34,3 +37,5 @@ speed = 70.0
 [node name="EnemyRobot" parent="Path2D" unique_id=1512144952 instance=ExtResource("6_tuhl2")]
 position = Vector2(171, 448)
 speed = 50.0
+
+[node name="GameUi" parent="." unique_id=157815344 instance=ExtResource("7_w5ioj")]

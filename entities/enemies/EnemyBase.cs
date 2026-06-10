@@ -45,7 +45,7 @@ public partial class EnemyBase : PathFollow2D
 
     private void OnDied()
     {
-		SignalHub.Instance?.EmitSpawnPoolObject(GlobalPosition, explosion);
+		SignalHub.EmitSpawnPoolObject(GlobalPosition, explosion);
 		var tween = CreateTween();
 		tween.TweenProperty(
 			sprite2D,

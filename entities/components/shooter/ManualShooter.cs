@@ -10,7 +10,7 @@ public partial class ManualShooter : Node2D
 	{
 		if (@event.IsActionPressed(INPUT_SHOOT))
 		{
-			SignalHub.Instance?.EmitSpawnPoolObject(GlobalPosition, projectileScene);
+			SignalHub.EmitSpawnPoolObject(GlobalPosition, projectileScene);
 		}
 	}
 }

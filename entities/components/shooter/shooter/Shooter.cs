@@ -25,7 +25,7 @@ public partial class Shooter : Node2D
 	void OnShoot()
 	{
 		if (projectileScene is not null)
-			SignalHub.Instance.EmitSpawnPoolObject(GlobalPosition, projectileScene);
+            SignalHub.EmitSpawnPoolObject(GlobalPosition, projectileScene);
 		audioStreamPlayer.Play();
 		RestartTimer();
 	}
