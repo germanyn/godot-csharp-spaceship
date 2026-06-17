@@ -37,6 +37,11 @@ public partial class ObjectContainer : Node
 
 	void SpawnDeferred(Vector2 position, PackedScene scene)
 	{
+		if (scene == null)
+		{
+			GD.PushError("SpawnPoolObject called with null scene");
+			return;
+		}
 		if (!Pools.ContainsKey(scene))
 		{
 			var newPool = new ScenePool(scene, this, 5);
