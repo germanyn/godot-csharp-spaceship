@@ -8,6 +8,7 @@ public partial class SignalHub : Node
 
     public event Action<int>? PlayerTakeDamage;
     public event Action<int>? PlayerHealthBoost;
+    public event Action<int>? PointsScored;
 
     public override void _EnterTree()
     {
@@ -15,14 +16,15 @@ public partial class SignalHub : Node
         base._EnterTree();
     }
 
-    public static void EmitSpawnPoolObject(Vector2 position, PackedScene scene)
-    {
+    public static void EmitSpawnPoolObject(Vector2 position, PackedScene scene) =>
         Instance.EmitSignal(SignalName.SpawnPoolObject, position, scene);
-    }
 
     public static void EmitPlayerTakeDamage(int damage) =>
         Instance.PlayerTakeDamage?.Invoke(damage);
 
     public static void EmitPlayerHealthBoost(int boost) =>
         Instance.PlayerHealthBoost?.Invoke(boost);
+
+    public static void EmitPointsScored(int points) =>
+        Instance.PointsScored?.Invoke(points);
 }

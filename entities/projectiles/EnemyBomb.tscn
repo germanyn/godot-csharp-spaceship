@@ -10,6 +10,7 @@ radius = 40.0
 
 [node name="EnemyBomb" unique_id=476217863 instance=ExtResource("1_vw2va")]
 ExplosionScene = ExtResource("2_fk8pt")
+points = 10
 
 [node name="Sprite2D" parent="." index="0" unique_id=1938860738]
 scale = Vector2(0.9, 0.9)

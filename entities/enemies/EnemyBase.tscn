@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8eusrkwcwe8v" path="res://entities/enemies/EnemyBase.cs" id="1_v2vft"]
 [ext_resource type="PackedScene" uid="uid://cs8ov2obt2qwa" path="res://entities/components/shooter/shooter/Shooter.tscn" id="2_j3at5"]
-[ext_resource type="PackedScene" uid="uid://23xsjoj7oey5" path="res://entities/effects/EnemyShipExplosion.tscn" id="2_ywgu6"]
+[ext_resource type="PackedScene" uid="uid://bw2wfc5ilt4oo" path="res://entities/PowerUp/PowerUp.tscn" id="2_ywgu6"]
 [ext_resource type="PackedScene" uid="uid://bko10s8vuwhti" path="res://entities/components/hitbox/HitBox.tscn" id="3_qvmat"]
 [ext_resource type="PackedScene" uid="uid://d1ctrkge078uo" path="res://entities/components/health_bar/HealthBar.tscn" id="4_ogbit"]
 
@@ -10,7 +10,7 @@
 rotates = false
 loop = false
 script = ExtResource("1_v2vft")
-explosion = ExtResource("2_ywgu6")
+powerupScene = ExtResource("2_ywgu6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1546929645]
 

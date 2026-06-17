@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xp8o6f070ifu" path="res://entities/enemies/EnemyBase.tscn" id="1_xbb7g"]
 [ext_resource type="Texture2D" uid="uid://c6d6rqaw3o4wk" path="res://assets/Images/Enemy1.png" id="2_g4oo0"]
+[ext_resource type="PackedScene" uid="uid://dhlbwwp2n6aes" path="res://entities/projectiles/HomingMissile.tscn" id="2_uue16"]
 [ext_resource type="AudioStream" uid="uid://ebfedm722tq0" path="res://assets/Sounds/Blaster1_short.wav" id="3_2mcht"]
 [ext_resource type="PackedScene" uid="uid://sfdcvasfm1cc" path="res://entities/projectiles/EnemyLaser.tscn" id="3_julth"]
 
@@ -10,6 +11,9 @@ radius = 50.0
 
 [node name="EnemyVee" unique_id=644578458 instance=ExtResource("1_xbb7g")]
 speed = 200.0
+powerupChance = 10.0
+homingMissileScene = ExtResource("2_uue16")
+points = 15
 
 [node name="Sprite2D" parent="." index="0" unique_id=1546929645]
 rotation = 3.1415927
@@ -29,3 +33,7 @@ offset_left = -50.0
 offset_top = -60.0
 offset_right = 50.0
 offset_bottom = -54.0
+LevelLow = 15.0
+LevelMed = 30.0
+StartHealth = 40.0
+MaxHealth = 40.0

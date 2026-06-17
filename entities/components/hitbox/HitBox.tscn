@@ -6,3 +6,6 @@
 script = ExtResource("1_773ps")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1207963177]
+
+[node name="InvincibilityTimer" type="Timer" parent="." unique_id=185332987]
+one_shot = true

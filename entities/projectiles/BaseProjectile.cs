@@ -12,6 +12,7 @@ public partial class BaseProjectile : Poolable
 {
 	[Export] PackedScene ExplosionScene;
 	[Export] float ExplosionMargin = 40;
+	[Export] int points = 0;
 	[Node] Sprite2D Sprite2D;
 	[Node] VisibleOnScreenNotifier2D ScreenNotifier2D;
 	[Node] Timer LifeTimer;
@@ -68,6 +69,7 @@ public partial class BaseProjectile : Poolable
 
     private void OnHitBoxDied(Area2D area)
     {
+		SignalHub.EmitPointsScored(points);
 		Explode(area.GlobalPosition);
 		Deactivate();
     }

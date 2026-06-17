@@ -6,7 +6,12 @@ using GodotUtilities;
 public partial class EnemyBase : PathFollow2D
 {
 	[Export] float speed = 100;
-	[Export] PackedScene explosion;
+	[Export] PackedScene explosionScene;
+	[Export] float powerupChance = 25;
+	[Export] PackedScene powerupScene;
+	[Export] float homingMissileChance = 25;
+	[Export] PackedScene homingMissileScene;
+	[Export] int points = 0;
 
 	[Node] HitBox hitBox;
 	[Node] HealthBar healthBar;
@@ -43,9 +48,20 @@ public partial class EnemyBase : PathFollow2D
 
     private void OnHit(int damage) => healthBar.TakeDamage(damage);
 
+	void createRandomChance(PackedScene? scene, float chance)
+	{
+		if (scene is null || GD.Randf() >= chance) return;
+		
+		SignalHub.EmitSpawnPoolObject(GlobalPosition, scene);
+	}
+
     private void OnDied()
     {
-		SignalHub.EmitSpawnPoolObject(GlobalPosition, explosion);
+		SignalHub.EmitPointsScored(points);
+		SignalHub.EmitSpawnPoolObject(GlobalPosition, explosionScene);
+		createRandomChance(powerupScene, powerupChance);
+		createRandomChance(homingMissileScene, homingMissileChance);
+
 		var tween = CreateTween();
 		tween.TweenProperty(
 			sprite2D,
