@@ -6,6 +6,9 @@
     <RootNamespace>SpaceAce</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="script_templates/**/*.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Firebelley.GodotUtilities" Version="6.2.0" />
   </ItemGroup>
 </Project>

@@ -1,9 +1,10 @@
 using Godot;
 using Godot.Collections;
 using GodotUtilities;
+using SpaceAce.commons.projectiles;
 
 [Scene]
-public partial class Asteroid : Node2D
+public partial class Asteroid : BaseProjectile
 {
 	[Export] Array<Texture2D> textures = [];
 	[Node] Sprite2D sprite2D;

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c6js5dvrj6f2k"]
+
+[ext_resource type="Script" uid="uid://fb88l58wdcg" path="res://entities/asteroid_explosion/AsteroidExplosion.cs" id="1_a3lr4"]
+[ext_resource type="AudioStream" uid="uid://dhavfqmyg4gtl" path="res://assets/Sounds/AsteroidExplosion.wav" id="3_a3lr4"]
+[ext_resource type="PackedScene" uid="uid://cm2p4i32af0tg" path="res://entities/asteroid_explosion/AsteroidPiece.tscn" id="3_pft8r"]
+
+[node name="AsteroidExplosion" type="Node2D" unique_id=582395763]
+script = ExtResource("1_a3lr4")
+
+[node name="PiecesGroup" type="Node2D" parent="." unique_id=12289733]
+
+[node name="AsteroidPiece" parent="PiecesGroup" unique_id=781771712 instance=ExtResource("3_pft8r")]
+position = Vector2(-20, -7)
+
+[node name="AsteroidPiece2" parent="PiecesGroup" unique_id=1269345859 instance=ExtResource("3_pft8r")]
+position = Vector2(-3, -26)
+
+[node name="AsteroidPiece3" parent="PiecesGroup" unique_id=1701124467 instance=ExtResource("3_pft8r")]
+position = Vector2(30, -12)
+
+[node name="AsteroidPiece4" parent="PiecesGroup" unique_id=697799519 instance=ExtResource("3_pft8r")]
+position = Vector2(28, 14)
+
+[node name="AsteroidPiece5" parent="PiecesGroup" unique_id=1310074596 instance=ExtResource("3_pft8r")]
+position = Vector2(9, 30)
+
+[node name="AsteroidPiece6" parent="PiecesGroup" unique_id=243617065 instance=ExtResource("3_pft8r")]
+position = Vector2(-18, 27)
+
+[node name="AsteroidPiece7" parent="PiecesGroup" unique_id=387758103 instance=ExtResource("3_pft8r")]
+position = Vector2(-29, 7)
+
+[node name="AsteroidPiece8" parent="PiecesGroup" unique_id=295129223 instance=ExtResource("3_pft8r")]
+position = Vector2(23, -26)
+
+[node name="AsteroidPiece9" parent="PiecesGroup" unique_id=1491933855 instance=ExtResource("3_pft8r")]
+position = Vector2(-24, -14)
+
+[node name="AsteroidPiece10" parent="PiecesGroup" unique_id=1025791553 instance=ExtResource("3_pft8r")]
+position = Vector2(-5, -2)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1405851024]
+stream = ExtResource("3_a3lr4")
+
+[node name="Timer" type="Timer" parent="." unique_id=1366696231]
+wait_time = 3.0
+one_shot = true

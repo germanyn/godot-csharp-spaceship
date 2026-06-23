@@ -13,7 +13,7 @@ public partial class Poolable : Node2D
 		Show();
 	}
 
-	public void Deactivate()
+	virtual public void Deactivate()
 	{
 		SetDeferred(PropertyName.ProcessMode, (int) ProcessModeEnum.Disabled);
 		Hide();

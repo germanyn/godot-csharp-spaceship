@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://odwsu1riin67" path="res://assets/Images/Asteroid1.png" id="3_ptalt"]
 [ext_resource type="Texture2D" uid="uid://54kdtng6jflk" path="res://assets/Images/Asteroid2.png" id="4_tsp2o"]
 [ext_resource type="Texture2D" uid="uid://bm2sc77qtvquf" path="res://assets/Images/Asteroid3.png" id="5_qtg37"]
+[ext_resource type="PackedScene" uid="uid://b0oaxlh0ij3v8" path="res://entities/movements/AsteroidMovement.tscn" id="6_ptalt"]
+[ext_resource type="PackedScene" uid="uid://c6js5dvrj6f2k" path="res://entities/asteroid_explosion/AsteroidExplosion.tscn" id="6_tsp2o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cejjn"]
 radius = 100.0
@@ -12,6 +14,9 @@ radius = 100.0
 [node name="Asteroid" unique_id=476217863 instance=ExtResource("1_6sjrd")]
 script = ExtResource("2_cejjn")
 textures = Array[Texture2D]([ExtResource("3_ptalt"), ExtResource("4_tsp2o"), ExtResource("5_qtg37")])
+ExplosionScene = ExtResource("6_tsp2o")
+ExplosionMargin = 0.0
+points = 25
 
 [node name="Sprite2D" parent="." index="0" unique_id=1938860738]
 texture = ExtResource("5_qtg37")
@@ -23,4 +28,7 @@ wait_time = 25.0
 collision_layer = 20
 collision_mask = 8
 collisionShape = SubResource("CircleShape2D_cejjn")
-maxCollisions = 5
+
+[node name="AsteroidMovement" parent="." index="4" unique_id=358949496 instance=ExtResource("6_ptalt")]
+speed = 100.0
+rotationSpeedDegrees = 90.0

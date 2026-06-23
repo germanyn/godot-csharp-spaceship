@@ -50,10 +50,8 @@ public partial class HitBox : Area2D
 		Reset();
 	}
 
-	void ApplyShape()
-	{
-		collisionShape2D.Shape = collisionShape;
-	}
+	void ApplyShape() =>
+		collisionShape2D?.Shape = collisionShape;
 
 	public void Reset()
 	{
