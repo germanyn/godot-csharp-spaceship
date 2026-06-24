@@ -30,11 +30,11 @@ public partial class AsteroidPiece : Node2D
 		startPosition = Position;
 	}
 
-    public override void _PhysicsProcess(double delta)
+    public override void _Process(double delta)
     {
-        base._PhysicsProcess(delta);
+        base._Process(delta);
 		Translate(velocity * (float) delta);
-		RotationDegrees += startRotationSpeedDegrees * (float) delta;
+		Rotate(float.DegreesToRadians(startRotationSpeedDegrees * (float)delta));
     }
 
 	public void Reset()

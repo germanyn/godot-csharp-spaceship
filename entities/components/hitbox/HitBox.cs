@@ -56,8 +56,8 @@ public partial class HitBox : Area2D
 	public void Reset()
 	{
 		collisionsLeft = maxCollisions;
-		invincibilityTimer.Start(invincibleTime);
-		invincible = true;
+		invincible = !Mathf.IsZeroApprox(invincibleTime);
+		if (invincible) invincibilityTimer.Start(invincibleTime);
 	}
 
     private void OnAreaEntered(Area2D area)

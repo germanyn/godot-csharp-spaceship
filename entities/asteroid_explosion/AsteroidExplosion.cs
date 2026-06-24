@@ -22,8 +22,8 @@ public partial class AsteroidExplosion : Poolable
     public override void _Ready()
     {
         base._Ready();
-		pieces = [ ..GetChildren().OfType<AsteroidPiece>() ];
-		Deactivate();
+		pieces = [ ..piecesGroup.GetChildren().OfType<AsteroidPiece>() ];
+        foreach(var piece in pieces) piece.Reset();
     }
 
     public override void _EnterTree()
